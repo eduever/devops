@@ -6,7 +6,11 @@ terraform apply nginx_plan
 
 terraform plan -out=blog_plan -var 'container_name=ruthwik_blog1' -var 'image_name=ghost:alpine' -var 'ext_port=8080'
 
+terraform state list
+
 terraform destroy
+
+terraform destroy -target <RESOURCETYPE.NAME>
 
 #when you have multiple workspaces created 
 
