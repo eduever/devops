@@ -1,13 +1,5 @@
 #---------storage/main.tf---------
 
-/* provider "aws" {
-  region = "${var.aws_region}"
-  access_key = "${var.access_key}"
-  secret_key = "${var.secret_key}"
-}
- */
-
- 
 # Create a random id
 resource "random_id" "tf_bucket_id" {
   byte_length = 2

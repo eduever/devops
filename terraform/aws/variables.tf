@@ -4,11 +4,9 @@ variable "aws_region" {
 }
 
 variable "access_key" {
-    default = "AKIAXZIBZ2IZQDAZZJ5N"
 }
 
 variable "secret_key" {
-    default = "56pO78QazOVRAW1FfIEr2UIDNSbtvljiOSobg0Ih"
 }
 
 #------ storage variables

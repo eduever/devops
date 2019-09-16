@@ -5,5 +5,6 @@ provider "aws" {
 }
 
 module "dynamo_table" { 
-    source = ""
+    source = "https://github.com/eduever/devops.git//devops/terraform/aws-sagemaker/sagemaker/?ref=master"
+    
 }
