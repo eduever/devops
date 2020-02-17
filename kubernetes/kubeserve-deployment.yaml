@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubeserve
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubeserve
+  template:
+    metadata:
+      name: pod-app-name
+      labels:
+        app: kubeserve
+    spec:
+      containers:
+        - name: container-app-name
+          image: linuxacademycontent/kubeserve:v1

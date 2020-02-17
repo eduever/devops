@@ -1,0 +1,30 @@
+--- #Boorstrap webservers
+- hosts: brserver
+  become: yes
+  gather_facts: yes
+  tasks:
+    - debug:
+        var: target_service
+    - name: installing apache server
+      yum:
+        name: "{{target_service}}"
+        state: latest
+    - name: creating an index file
+      file:
+        name: /var/www/html/index.html
+        state: touch
+    - name: adding web content
+      lineinfile:
+        line: "Hello ruthwik"
+        path: /var/www/html/index.html
+      notify:
+        - restart httpd
+      register: task_debug
+    - debug:
+        msg: "output of lineinfile is {{task_debug}}"
+  handlers:
+    - name: attempting to restart http
+      service:
+        name: httpd
+        service: started
+      listen: "restart httpd"
