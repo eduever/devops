@@ -1,0 +1,13 @@
+[Unit]
+Description=S3 Photo App Node.js service
+After=network.target photo-filter.target photo-storage.target
+
+[Service]
+Restart=always
+Environment=NODE_ENV=production
+Environment=AWS_ACCESS_KEY_ID=AKIASRX3FFZ6NH4IQWHY
+Environment=AWS_SECRET_ACCESS_KEY=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
+ExecStart=/srv/www/s3photoapp/apps/web-client/bin/www
+
+[Install]
+WantedBy=default.target
