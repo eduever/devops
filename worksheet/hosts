@@ -1,0 +1,12 @@
+[local_host]
+localhost ansible_port=22 ansible_user=ansible ansible_password=devOps@123 ansible_host=127.0.0.1
+
+
+[local_host:vars]
+ssh_key_filename="ansible_rsa"
+remote_machine_username="ubuntu"
+remote_machine_password="devOps@123"
+
+
+[ansible_setup_passwordless_setup_group]
+jenkins ansible_port=22 ansible_user=ubuntu ansible_host=13.58.93.122
